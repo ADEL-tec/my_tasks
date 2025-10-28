@@ -1,0 +1,26 @@
+{
+    "@@locale": "en",
+    "language": "English",
+    "@language": {
+        "description": "Selectcted Language"
+    },
+    "appName": "My Tasks",
+    "@@appName": {
+        "description": "Name of the app"
+    },
+    "welcomeBack": "Welcome Back!",
+    "login": "Login",
+    "loginDescription": "Please fill the forms below to get started.\nif you are not member yet, please clock on Register now below",
+    "email": "Email",
+    "enterEmail": "Enter your email address",
+    "password": "Password",
+    "enterPassword": "Enter your email address",
+    "validatorsInvalidEmail": "Please enter a valid email address!",
+    "validatorsEmailRequired": "Email is required",
+    "validatorsPasswordRequired": "Password is required",
+    "validatorLongPassword": "Password must be at least 6 characters",
+    "validatorPasswordsNotMatch": "passwords not match",
+    "validatorsNameRequired": "Name is required",
+    "validatorLongName": "Name must be at least 6 characters",
+    "validatorsPhoneRequired": "Phone number is required"
+}

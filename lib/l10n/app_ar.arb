@@ -1,0 +1,20 @@
+{
+    "@@locale": "ar",
+    "language": "العربية",
+    "appName": "مهامي",
+    "welcomeBack": "مرحبًا بعودتك!",
+    "Login": "تسجيل الدخول",
+    "loginDescription": "يرجى ملء النماذج أدناه للبدء.\n إذا لم تكن عضوًا بعد، فيرجى تسجيل الدخول الآن أدناه",
+    "email": "البريد إلكتروني",
+    "enterEmail": "أدخل عنوان بريدك الإلكتروني",
+    "password": "كلمة المرور",
+    "enterPassword": "أدخل عنوان بريدك الإلكتروني",
+    "validatorsInvalidEmail": "يرجى إدخال عنوان بريد إلكتروني صالح!",
+    "validatorsEmailRequired": "البريد الإلكتروني مطلوب",
+    "validatorsPasswordRequired": "كلمة المرور مطلوبة",
+    "validatorLongPassword": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
+    "validatorPasswordsNotMatch": "كلمات المرور غير متطابقة",
+    "validatorsNameRequired": "الاسم مطلوب",
+    "validatorLongName": "يجب أن يتكون الاسم من 6 أحرف على الأقل",
+    "validatorsPhoneRequired": "رقم الهاتف مطلوب"
+}
