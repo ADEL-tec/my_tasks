@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:my_tasks/core/routes/routes.dart';
 
-import '../../../core/values/constants.dart';
-import '../../../global.dart';
+import '../../core/routes/routes.dart';
+import '../../core/values/constants.dart';
+import '../../global.dart';
 
 part 'navigation_state.dart';
 
@@ -26,9 +26,7 @@ class NavigationCubit extends Cubit<NavigationState> {
 
   // Change theme mode
   Future<void> setPageIndex(int index) async {
-    print("new state => $index");
     emit(NavigationState(index));
-    print("state=> ${state.selectedIndex}");
     await Global.storageService.setInt(
       AppConstants.STORAGE_NAVIGATION_INDEX,
       index,

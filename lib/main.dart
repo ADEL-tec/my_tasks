@@ -3,10 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_tasks/l10n/l10n.dart';
-import 'package:my_tasks/logic/localization_bloc/localization_bloc.dart';
-import 'package:my_tasks/logic/navigation_cubit/cubit/navigation_cubit.dart';
-import 'package:my_tasks/logic/theme_mode_cubit/theme_mode_cubit.dart';
+import 'l10n/l10n.dart';
+import 'logic/localization_bloc/localization_bloc.dart';
+import 'logic/navigation_cubit/navigation_cubit.dart';
+import 'logic/task_bloc/task_bloc.dart';
+import 'logic/theme_mode_cubit/theme_mode_cubit.dart';
 
 import 'core/routes/pages.dart';
 import 'core/themes/app_theme.dart';
@@ -26,13 +27,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => LocalizationBloc()),
-        BlocProvider(
-          create: (_) =>
-              AuthBloc(authService: Global.authService)..add(AppStarted()),
-        ),
-        BlocProvider(create: (_) => ThemeModeCubit()),
-        BlocProvider(create: (_) => NavigationCubit()),
+        BlocProvider(create: (_) => getIt<LocalizationBloc>()),
+        BlocProvider(create: (_) => getIt<AuthBloc>()),
+        BlocProvider(create: (_) => getIt<ThemeModeCubit>()),
+        BlocProvider(create: (_) => getIt<NavigationCubit>()),
+        BlocProvider(create: (context) => getIt<TaskBloc>()),
       ],
       child: BlocBuilder<LocalizationBloc, LocalizationState>(
         builder: (context, localizationState) {

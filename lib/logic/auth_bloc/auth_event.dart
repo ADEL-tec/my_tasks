@@ -21,11 +21,11 @@ class LoginRequested extends AuthEvent {
 class LogoutRequested extends AuthEvent {}
 
 class RegisterRequested extends AuthEvent {
-  final String email;
+  final UserEntity user;
   final String password;
 
-  RegisterRequested({required this.email, required this.password});
+  RegisterRequested({required this.user, required this.password});
 
   @override
-  List<Object?> get props => [email, password];
+  List<Object?> get props => [user, password];
 }

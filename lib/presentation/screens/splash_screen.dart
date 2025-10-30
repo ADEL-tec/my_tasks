@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_tasks/core/values/constants.dart';
 
+import '../../core/values/constants.dart';
 import '../../global.dart';
 
 class SplashScreen extends StatefulWidget {

@@ -2,7 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:meta/meta.dart';
-import 'package:my_tasks/core/values/constants.dart';
+import '../../domain/entities/user_entity.dart';
+import '../../core/values/constants.dart';
 
 import '../../core/service/auth_service.dart';
 import '../../global.dart';
@@ -18,6 +19,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<LoginRequested>(_onLoginRequested);
     on<RegisterRequested>(_onRegisterRequested);
     on<LogoutRequested>(_onLogoutRequested);
+
+    // Checking Auth on creation
+    add(AppStarted());
   }
 
   Future<void> _onAppStarted(AppStarted event, Emitter<AuthState> emit) async {
@@ -46,6 +50,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         AppConstants.STORAGE_USER_UID,
         userCredential.user!.uid,
       );
+      await Global.loadCurrentUserData();
 
       emit(Authenticated(userCredential.user!));
     } on FirebaseAuthException catch (e) {
@@ -61,7 +66,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(AuthLoading());
     try {
       final userCredential = await authService.createAcount(
-        email: event.email,
+        user: event.user,
         password: event.password,
       );
 
@@ -69,6 +74,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         AppConstants.STORAGE_USER_UID,
         userCredential.user!.uid,
       );
+
+      await Global.loadCurrentUserData();
 
       emit(Authenticated(userCredential.user!));
     } on FirebaseAuthException catch (e) {

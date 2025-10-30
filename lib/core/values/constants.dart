@@ -6,4 +6,8 @@ class AppConstants {
   static const String STORAGE_THEME_MODE = "theme_mode";
   static const String STORAGE_LOCALIZATION = "localization";
   static const String STORAGE_NAVIGATION_INDEX = "navigation_index";
+
+  // Firebase Collection Names
+  static const String FIREBASE_COLLECTION_TASKS = "tasks";
+  static const String FIREBASE_COLLECTION_USERS = "users";
 }

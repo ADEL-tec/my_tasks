@@ -18,11 +18,33 @@ class AppLocalizationsAr extends AppLocalizations {
   String get welcomeBack => 'مرحبًا بعودتك!';
 
   @override
+  String get welcome => 'مرحبًا!';
+
+  @override
   String get login => 'Login';
+
+  @override
+  String get register => 'تسجيل';
 
   @override
   String get loginDescription =>
       'يرجى ملء النماذج أدناه للبدء.\n إذا لم تكن عضوًا بعد، فيرجى تسجيل الدخول الآن أدناه';
+
+  @override
+  String get registerDescription =>
+      'يرجى ملء النموذج أدناه لإنشاء حسابك.\n إذا كان لديك حساب بالفعل، يرجى النقر فوق \'تسجيل الدخول\' أدناه.';
+
+  @override
+  String get loginNow => 'تسجيل الدخول الآن';
+
+  @override
+  String get registerNow => 'سجل الآن';
+
+  @override
+  String get name => 'الاسم';
+
+  @override
+  String get enterName => 'أدخل اسمك';
 
   @override
   String get email => 'البريد إلكتروني';
@@ -60,4 +82,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get validatorsPhoneRequired => 'رقم الهاتف مطلوب';
+
+  @override
+  String get notMember => 'ليس عضوا ؟';
 }

@@ -117,7 +117,7 @@ class MaterialTheme {
     useMaterial3: true,
     brightness: colorScheme.brightness,
     colorScheme: colorScheme,
-    scaffoldBackgroundColor: colorScheme.background,
+    scaffoldBackgroundColor: colorScheme.surface,
     canvasColor: colorScheme.surface,
     fontFamily: "Parkinsans",
   );

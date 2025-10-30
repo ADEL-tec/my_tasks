@@ -9,7 +9,9 @@ class NavigationState extends Equatable {
       case 0:
         return AppRoutes.home;
       case 1:
-        return AppRoutes.home;
+        return AppRoutes.tasks;
+      // case 2:
+      //   return AppRoutes.home;
       case 2:
         return AppRoutes.profile;
       default:

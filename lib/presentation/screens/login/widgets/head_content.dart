@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_tasks/core/extensions/context_extensions.dart';
+import '../../../../core/extensions/context_extensions.dart';
 
 class HeadContent extends StatelessWidget {
-  const HeadContent({super.key});
+  const HeadContent({
+    super.key,
+    required this.title,
+    required this.description,
+  });
+
+  final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +28,7 @@ class HeadContent extends StatelessWidget {
         ),
         SizedBox(height: 20.h),
         Text(
-          context.localization.welcomeBack,
+          title,
           textAlign: TextAlign.start,
           style: TextStyle(
             fontSize: 24.sp,
@@ -30,7 +37,7 @@ class HeadContent extends StatelessWidget {
           ),
         ),
         Text(
-          context.localization.loginDescription,
+          description,
           textAlign: TextAlign.start,
           style: TextStyle(
             fontSize: 14.sp,

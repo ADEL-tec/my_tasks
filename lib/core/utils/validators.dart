@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_tasks/core/extensions/context_extensions.dart';
 
+import '../extensions/context_extensions.dart';
 import '../values/values.dart';
 
 class Validators {
@@ -50,8 +50,20 @@ class Validators {
   }
 
   static String? validatePhone(BuildContext context, String? value) {
-    if (value == null || value.isEmpty)
+    if (value == null || value.isEmpty) {
       return context.localization.validatorsPhoneRequired;
+    }
+    return null;
+  }
+
+  static String? validateNotEmpty(
+    BuildContext context,
+    String? value,
+    String message,
+  ) {
+    if (value == null || value.trim().isEmpty) {
+      return message;
+    }
     return null;
   }
 }

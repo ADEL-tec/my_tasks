@@ -1,4 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'storage_service.dart';
+import '../values/constants.dart';
+
+import '../../domain/entities/user_entity.dart';
 
 class AuthService {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
@@ -18,13 +23,24 @@ class AuthService {
   }
 
   Future<UserCredential> createAcount({
-    required String email,
+    required UserEntity user,
     required String password,
   }) async {
-    return await firebaseAuth.createUserWithEmailAndPassword(
-      email: email,
+    final userCredential = await firebaseAuth.createUserWithEmailAndPassword(
+      email: user.email!,
       password: password,
     );
+
+    final map = user.toMap();
+    map['createdAt'] = FieldValue.serverTimestamp();
+    map['userId'] = userCredential.user!.uid;
+    map['type'] = 1;
+    await FirebaseFirestore.instance
+        .collection(AppConstants.FIREBASE_COLLECTION_USERS)
+        .doc(userCredential.user!.uid)
+        .set(map);
+
+    return userCredential;
   }
 
   Future<void> signOut() async {

@@ -116,17 +116,59 @@ abstract class AppLocalizations {
   /// **'Welcome Back!'**
   String get welcomeBack;
 
+  /// No description provided for @welcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome!'**
+  String get welcome;
+
   /// No description provided for @login.
   ///
   /// In en, this message translates to:
   /// **'Login'**
   String get login;
 
+  /// No description provided for @register.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get register;
+
   /// No description provided for @loginDescription.
   ///
   /// In en, this message translates to:
   /// **'Please fill the forms below to get started.\nif you are not member yet, please clock on Register now below'**
   String get loginDescription;
+
+  /// No description provided for @registerDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Please fill in the form below to create your account.\nIf you already have an account, please click on \"Sign In\" below.'**
+  String get registerDescription;
+
+  /// No description provided for @loginNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Login Now'**
+  String get loginNow;
+
+  /// No description provided for @registerNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Login Now'**
+  String get registerNow;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
+  /// No description provided for @enterName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter Your Name'**
+  String get enterName;
 
   /// No description provided for @email.
   ///
@@ -199,6 +241,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Phone number is required'**
   String get validatorsPhoneRequired;
+
+  /// No description provided for @notMember.
+  ///
+  /// In en, this message translates to:
+  /// **'Not a member?'**
+  String get notMember;
 }
 
 class _AppLocalizationsDelegate

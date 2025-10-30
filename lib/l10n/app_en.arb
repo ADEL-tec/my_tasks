@@ -9,8 +9,15 @@
         "description": "Name of the app"
     },
     "welcomeBack": "Welcome Back!",
+    "welcome": "Welcome!",
     "login": "Login",
+    "register": "Register",
     "loginDescription": "Please fill the forms below to get started.\nif you are not member yet, please clock on Register now below",
+    "registerDescription": "Please fill in the form below to create your account.\nIf you already have an account, please click on \"Sign In\" below.",
+    "loginNow": "Login Now",
+    "registerNow": "Login Now",
+    "name": "Name",
+    "enterName": "Enter Your Name",
     "email": "Email",
     "enterEmail": "Enter your email address",
     "password": "Password",
@@ -22,5 +29,6 @@
     "validatorPasswordsNotMatch": "passwords not match",
     "validatorsNameRequired": "Name is required",
     "validatorLongName": "Name must be at least 6 characters",
-    "validatorsPhoneRequired": "Phone number is required"
+    "validatorsPhoneRequired": "Phone number is required",
+    "notMember": "Not a member?"
 }

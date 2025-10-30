@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../core/values/values.dart';
 
 class MyTextField extends StatelessWidget {
   final String text;
@@ -9,6 +10,8 @@ class MyTextField extends StatelessWidget {
   final String hintText;
   final Function(String)? onChanged;
   final String? Function(String?)? validator;
+  final int? maxLines;
+  final int? minLines;
 
   const MyTextField({
     super.key,
@@ -19,16 +22,18 @@ class MyTextField extends StatelessWidget {
     required this.hintText,
     this.onChanged,
     this.validator,
+    this.maxLines = 1,
+    this.minLines = 1,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60.h,
+      height: maxLines != 1 ? 60.h + (15 * maxLines!) : 60.h,
       padding: EdgeInsets.only(left: 16.w, right: 10.w),
       margin: EdgeInsets.only(bottom: 10.h),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12.w),
+        borderRadius: BorderRadius.circular(Values.buttonRadius),
         color: Theme.of(context).colorScheme.secondaryContainer,
       ),
       child: Row(
@@ -39,6 +44,8 @@ class MyTextField extends StatelessWidget {
               onChanged: onChanged,
               keyboardType: textType,
               controller: controller,
+              maxLines: maxLines,
+              minLines: minLines,
               obscureText: textType == TextInputType.visiblePassword
                   ? true
                   : false,

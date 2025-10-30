@@ -2,7 +2,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Values {
   static const double iconRadius = 24;
-  static const double buttonRadius = 14;
+  static double buttonRadius = 15.w;
   static const double modalBottomRadius = 26;
   static const double inputRadius = 18;
   static double horizontalPadding = 20.w;

@@ -3,25 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../../core/extensions/context_extensions.dart';
-import '../../../core/routes/routes.dart';
+import '../../../domain/entities/user_entity.dart';
+
+import '../../../core/routes/names.dart';
 import '../../../core/utils/validators.dart';
 import '../../../core/values/values.dart';
 import '../../../logic/auth_bloc/auth_bloc.dart';
 import '../../widgets/my_button.dart';
 import '../../widgets/my_text_field.dart';
-import 'widgets/head_content.dart';
+import '../login/widgets/head_content.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
+  final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
@@ -32,13 +34,14 @@ class _LoginPageState extends State<LoginPage> {
     super.dispose();
   }
 
-  void _onLoginPressed() {
-    print("email ${_emailController.text}");
-    print("password ${_passwordController.text}");
+  void _onRegisterPressed() {
     if (_formKey.currentState!.validate()) {
       context.read<AuthBloc>().add(
-        LoginRequested(
-          email: _emailController.text.trim(),
+        RegisterRequested(
+          user: UserEntity(
+            email: _emailController.text.trim(),
+            name: _nameController.text.trim(),
+          ),
           password: _passwordController.text.trim(),
         ),
       );
@@ -86,8 +89,8 @@ class _LoginPageState extends State<LoginPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         HeadContent(
-                          title: context.localization.welcomeBack,
-                          description: context.localization.loginDescription,
+                          title: context.localization.welcome,
+                          description: context.localization.registerDescription,
                         ),
                         SizedBox(height: 40.h),
                         // LightText("Email"),
@@ -96,6 +99,19 @@ class _LoginPageState extends State<LoginPage> {
                           key: _formKey,
                           child: Column(
                             children: [
+                              MyTextField(
+                                controller: _nameController,
+                                text: context.localization.name,
+                                textType: TextInputType.name,
+                                iconName: Icons.person,
+                                hintText: context.localization.enterName,
+                                validator: (value) {
+                                  return Validators.validateFullName(
+                                    context,
+                                    value,
+                                  );
+                                },
+                              ),
                               MyTextField(
                                 controller: _emailController,
                                 text: context.localization.email,
@@ -134,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
                                     ).textTheme.bodyMedium,
                                     children: [
                                       TextSpan(
-                                        text: context.localization.registerNow,
+                                        text: context.localization.loginNow,
                                         recognizer: TapGestureRecognizer()
                                           ..onTap = () => Navigator.pushNamed(
                                             context,
@@ -161,10 +177,10 @@ class _LoginPageState extends State<LoginPage> {
                                     );
                                   }
                                   return MyButton(
-                                    onTap: _onLoginPressed,
+                                    onTap: _onRegisterPressed,
                                     btnType: ButtonType.primary,
                                     text: state is! AuthLoading
-                                        ? context.localization.login
+                                        ? context.localization.register
                                         : null,
                                     child: state is AuthLoading
                                         ? Center(

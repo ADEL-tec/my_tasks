@@ -3,8 +3,15 @@
     "language": "العربية",
     "appName": "مهامي",
     "welcomeBack": "مرحبًا بعودتك!",
+    "welcome": "مرحبًا!",
     "Login": "تسجيل الدخول",
+    "register": "تسجيل",
     "loginDescription": "يرجى ملء النماذج أدناه للبدء.\n إذا لم تكن عضوًا بعد، فيرجى تسجيل الدخول الآن أدناه",
+    "registerDescription": "يرجى ملء النموذج أدناه لإنشاء حسابك.\n إذا كان لديك حساب بالفعل، يرجى النقر فوق 'تسجيل الدخول' أدناه.",
+    "loginNow": "تسجيل الدخول الآن",
+    "registerNow": "سجل الآن",
+    "name": "الاسم",
+    "enterName": "أدخل اسمك",
     "email": "البريد إلكتروني",
     "enterEmail": "أدخل عنوان بريدك الإلكتروني",
     "password": "كلمة المرور",
@@ -16,5 +23,6 @@
     "validatorPasswordsNotMatch": "كلمات المرور غير متطابقة",
     "validatorsNameRequired": "الاسم مطلوب",
     "validatorLongName": "يجب أن يتكون الاسم من 6 أحرف على الأقل",
-    "validatorsPhoneRequired": "رقم الهاتف مطلوب"
+    "validatorsPhoneRequired": "رقم الهاتف مطلوب",
+    "notMember": "ليس عضوا ؟"
 }

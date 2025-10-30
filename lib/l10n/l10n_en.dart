@@ -18,11 +18,33 @@ class AppLocalizationsEn extends AppLocalizations {
   String get welcomeBack => 'Welcome Back!';
 
   @override
+  String get welcome => 'Welcome!';
+
+  @override
   String get login => 'Login';
+
+  @override
+  String get register => 'Register';
 
   @override
   String get loginDescription =>
       'Please fill the forms below to get started.\nif you are not member yet, please clock on Register now below';
+
+  @override
+  String get registerDescription =>
+      'Please fill in the form below to create your account.\nIf you already have an account, please click on \"Sign In\" below.';
+
+  @override
+  String get loginNow => 'Login Now';
+
+  @override
+  String get registerNow => 'Login Now';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get enterName => 'Enter Your Name';
 
   @override
   String get email => 'Email';
@@ -59,4 +81,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get validatorsPhoneRequired => 'Phone number is required';
+
+  @override
+  String get notMember => 'Not a member?';
 }
