@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../global.dart';
-import '../../../../logic/task_bloc/task_bloc.dart';
+import '../../../../core/extensions/context_extensions.dart';
 
 import '../../../../core/values/values.dart';
 import '../home_controller.dart';
@@ -19,11 +17,13 @@ class _TodayTasksCardState extends State<TodayTasksCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: Values.horizontalPadding),
+      padding: EdgeInsetsDirectional.symmetric(
+        horizontal: Values.horizontalPadding,
+      ),
       child: Container(
         height: 100.h,
         width: double.infinity,
-        padding: EdgeInsets.all(18.w),
+        padding: EdgeInsetsDirectional.all(18.w),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(Values.buttonRadius),
           color: Theme.of(context).colorScheme.onTertiaryContainer,
@@ -35,7 +35,7 @@ class _TodayTasksCardState extends State<TodayTasksCard> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  "Today",
+                  context.localization.today,
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.tertiaryContainer,
                   ),

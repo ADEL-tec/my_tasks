@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../core/extensions/context_extensions.dart';
 
 import '../../core/values/constants.dart';
 import '../../global.dart';
@@ -54,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen>
             Image.asset("assets/images/icon.png", width: 80, height: 80),
             SizedBox(height: 10),
             Text(
-              "My Tasks",
+              context.localization.appName,
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18.sp,

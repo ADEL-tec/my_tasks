@@ -30,8 +30,8 @@ class MyTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: maxLines != 1 ? 60.h + (15 * maxLines!) : 60.h,
-      padding: EdgeInsets.only(left: 16.w, right: 10.w),
-      margin: EdgeInsets.only(bottom: 10.h),
+      padding: EdgeInsetsDirectional.only(start: 16.w, end: 10.w),
+      margin: EdgeInsetsDirectional.only(bottom: 10.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(Values.buttonRadius),
         color: Theme.of(context).colorScheme.secondaryContainer,

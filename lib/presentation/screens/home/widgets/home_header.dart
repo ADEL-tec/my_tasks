@@ -12,7 +12,9 @@ class HomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: Values.horizontalPadding),
+      padding: EdgeInsetsDirectional.symmetric(
+        horizontal: Values.horizontalPadding,
+      ),
       child: Row(
         children: [
           Text(
@@ -20,8 +22,11 @@ class HomeHeader extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
           ),
           Container(
-            margin: EdgeInsets.only(left: 12.w),
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+            margin: EdgeInsetsDirectional.only(start: 12.w),
+            padding: EdgeInsetsDirectional.symmetric(
+              horizontal: 12.w,
+              vertical: 4.h,
+            ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.w),
               color: Theme.of(context).colorScheme.secondaryContainer,

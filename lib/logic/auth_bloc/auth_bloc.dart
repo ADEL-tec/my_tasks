@@ -2,10 +2,10 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:meta/meta.dart';
-import '../../domain/entities/user_entity.dart';
-import '../../core/values/constants.dart';
 
 import '../../core/service/auth_service.dart';
+import '../../core/values/constants.dart';
+import '../../domain/entities/user_entity.dart';
 import '../../global.dart';
 
 part 'auth_event.dart';

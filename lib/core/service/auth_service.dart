@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'storage_service.dart';
 import '../values/constants.dart';
 
 import '../../domain/entities/user_entity.dart';

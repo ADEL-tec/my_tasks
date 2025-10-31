@@ -1,8 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
 
+import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/routes/routes.dart';
 import '../../../../core/values/values.dart';
 import '../../../../domain/entities/task_entity.dart';
@@ -34,11 +36,12 @@ class _TaskItemCardState extends State<TaskItemCard>
   Widget build(BuildContext context) {
     final color = widget.task.isDone ? Colors.green[300] : Colors.red[300];
     return Container(
-      margin: EdgeInsets.symmetric(
+      margin: EdgeInsetsDirectional.symmetric(
         horizontal: Values.horizontalPadding,
         vertical: 5.h,
       ),
       child: Slidable(
+        useTextDirection: true,
         key: ValueKey(widget.index),
         controller: _slidableontroller,
         startActionPane: ActionPane(
@@ -53,18 +56,28 @@ class _TaskItemCardState extends State<TaskItemCard>
                 );
               },
               backgroundColor: Colors.blue[300]!,
-              label: "Edit",
-              borderRadius: BorderRadius.horizontal(
-                left: Radius.circular(Values.buttonRadius),
-              ),
+              label: context.localization.edit,
+              borderRadius:
+                  Directionality.of(context).name == TextDirection.RTL.spanText
+                  ? BorderRadius.horizontal(
+                      right: Radius.circular(Values.buttonRadius),
+                    )
+                  : BorderRadius.horizontal(
+                      left: Radius.circular(Values.buttonRadius),
+                    ),
             ),
             SlidableAction(
               onPressed: _showTaskDetails,
               backgroundColor: Colors.green[300]!,
-              label: "Details",
-              borderRadius: BorderRadius.horizontal(
-                right: Radius.circular(Values.buttonRadius),
-              ),
+              label: context.localization.details,
+              borderRadius:
+                  Directionality.of(context).name == TextDirection.RTL.spanText
+                  ? BorderRadius.horizontal(
+                      left: Radius.circular(Values.buttonRadius),
+                    )
+                  : BorderRadius.horizontal(
+                      right: Radius.circular(Values.buttonRadius),
+                    ),
             ),
           ],
         ),
@@ -89,13 +102,24 @@ class _TaskItemCardState extends State<TaskItemCard>
         ),
         child: GestureDetector(
           onLongPress: () {
-            _slidableontroller.openEndActionPane();
+            if (Directionality.of(context).name == TextDirection.RTL.spanText) {
+              _slidableontroller.openStartActionPane();
+            } else {
+              _slidableontroller.openEndActionPane();
+            }
           },
           onTap: () {
-            _slidableontroller.openStartActionPane();
+            if (Directionality.of(context).name == TextDirection.RTL.spanText) {
+              _slidableontroller.openEndActionPane();
+            } else {
+              _slidableontroller.openStartActionPane();
+            }
           },
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
+            padding: EdgeInsetsDirectional.symmetric(
+              horizontal: 10.w,
+              vertical: 15.h,
+            ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Values.buttonRadius),
               border: Border(left: BorderSide(color: color!, width: 4)),
@@ -126,7 +150,9 @@ class _TaskItemCardState extends State<TaskItemCard>
                       ),
                     ),
                     Text(
-                      widget.task.isDone ? "Done" : "Not Done",
+                      widget.task.isDone
+                          ? context.localization.done
+                          : context.localization.notDone,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 10.sp,
@@ -187,7 +213,9 @@ class _TaskItemCardState extends State<TaskItemCard>
       context: context,
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+        borderRadius: BorderRadiusDirectional.vertical(
+          top: Radius.circular(20),
+        ),
       ),
       builder: (ctx) {
         return TaskDetails(widget.task);

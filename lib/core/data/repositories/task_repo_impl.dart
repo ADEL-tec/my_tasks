@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../../values/constants.dart';
+
 import '../../../domain/entities/task_entity.dart';
 import '../../../domain/repositories/task_repo.dart';
+import '../../values/constants.dart';
 import '../models/task_model.dart';
 
 class TaskRepositoryImpl implements TaskRepository {
@@ -27,7 +28,6 @@ class TaskRepositoryImpl implements TaskRepository {
 
       await _tasksRef.add(model.toMap());
     } catch (e) {
-      print(e);
       throw Exception('Failed to add task: $e');
     }
   }

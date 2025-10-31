@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'core/extensions/context_extensions.dart';
 import 'l10n/l10n.dart';
 import 'logic/localization_bloc/localization_bloc.dart';
 import 'logic/navigation_cubit/navigation_cubit.dart';
@@ -43,18 +44,16 @@ class MyApp extends StatelessWidget {
                   showDialog(
                     context: context,
                     builder: (ctx) => AlertDialog(
-                      title: const Text('Exit'),
-                      content: const Text(
-                        'Do you sure you want leave the app!',
-                      ),
+                      title: Text(context.localization.exit),
+                      content: Text(context.localization.doYouSureWantLeaveApp),
                       actions: [
                         TextButton(
                           onPressed: () => exit(0),
-                          child: const Text('exit'),
+                          child: Text(context.localization.exit),
                         ),
                         ElevatedButton(
                           onPressed: () => Navigator.pop(ctx),
-                          child: const Text('cancel'),
+                          child: Text(context.localization.cancel),
                         ),
                       ],
                     ),

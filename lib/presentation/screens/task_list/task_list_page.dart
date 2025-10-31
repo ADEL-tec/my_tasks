@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import '../../../core/extensions/context_extensions.dart';
 import '../../../core/routes/routes.dart';
 import '../../../core/values/values.dart';
 import '../../../domain/entities/task_entity.dart';
@@ -70,16 +71,25 @@ class _TaskListPageState extends State<TaskListPage>
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   // AppBar
-                  DefaultAppBar(title: 'Task List'),
+                  DefaultAppBar(title: context.localization.taskList),
                   // Filter Tabs
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    padding: EdgeInsetsDirectional.symmetric(vertical: 8.w),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        _buildFilterButton('All', TaskFilter.all),
-                        _buildFilterButton('Done', TaskFilter.done),
-                        _buildFilterButton('Not Done', TaskFilter.notDone),
+                        _buildFilterButton(
+                          context.localization.all,
+                          TaskFilter.all,
+                        ),
+                        _buildFilterButton(
+                          context.localization.done,
+                          TaskFilter.done,
+                        ),
+                        _buildFilterButton(
+                          context.localization.notDone,
+                          TaskFilter.notDone,
+                        ),
                       ],
                     ),
                   ),
@@ -112,7 +122,9 @@ class _TaskListPageState extends State<TaskListPage>
                               child: ListView.builder(
                                 itemCount: filteredTasks.length,
                                 shrinkWrap: true,
-                                padding: EdgeInsets.only(bottom: 70.h),
+                                padding: EdgeInsetsDirectional.only(
+                                  bottom: 70.h,
+                                ),
                                 itemBuilder: (ctx, index) {
                                   final task = filteredTasks[index];
 
@@ -146,7 +158,7 @@ class _TaskListPageState extends State<TaskListPage>
                 position: _btnAnimation,
                 child: MyButton(
                   btnType: ButtonType.primary,
-                  text: "New Task",
+                  text: context.localization.newTask,
                   icon: Icons.add,
                   onTap: () async {
                     final result = await Navigator.pushNamed(
@@ -174,7 +186,10 @@ class _TaskListPageState extends State<TaskListPage>
         setState(() => _selectedFilter = filter);
       },
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
+        padding: EdgeInsetsDirectional.symmetric(
+          horizontal: 20.w,
+          vertical: 8.h,
+        ),
         decoration: BoxDecoration(
           color: isSelected
               ? Theme.of(context).colorScheme.primary

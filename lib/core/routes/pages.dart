@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../presentation/screens/register/register_page.dart';
-import '../../domain/entities/task_entity.dart';
+
 import '../../presentation/screens/add_edit_task/add_edit_task_page.dart';
 import '../../presentation/screens/auth_wrapper.dart';
+import '../../presentation/screens/home/home_screen.dart';
 import '../../presentation/screens/login/login_page.dart';
 import '../../presentation/screens/profile/profile_page.dart';
+import '../../presentation/screens/register/register_page.dart';
 import '../../presentation/screens/task_list/task_list_page.dart';
-
-import '../../presentation/screens/home/home_screen.dart';
 import 'names.dart';
 
 class AppPages {

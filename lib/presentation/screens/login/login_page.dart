@@ -64,7 +64,9 @@ class _LoginPageState extends State<LoginPage> {
         },
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: Values.horizontalPadding),
+            padding: EdgeInsetsDirectional.symmetric(
+              horizontal: Values.horizontalPadding,
+            ),
             child: Stack(
               children: [
                 Positioned.fill(
@@ -75,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                     alignment: Alignment.bottomCenter,
                     child: SvgPicture.asset(
                       "assets/images/next-tasks.svg",
-                      semanticsLabel: 'Login image',
+                      semanticsLabel: context.localization.loginImage,
                       width: 335.w,
                     ),
                   ),
@@ -128,7 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                               Center(
                                 child: RichText(
                                   text: TextSpan(
-                                    text: "Not a member?",
+                                    text: context.localization.notMember,
                                     style: Theme.of(
                                       context,
                                     ).textTheme.bodyMedium,

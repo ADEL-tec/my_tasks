@@ -1,19 +1,17 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../global.dart';
-import '../../../logic/navigation_cubit/navigation_cubit.dart';
-import '../../../core/extensions/context_extensions.dart';
-import '../../../core/routes/routes.dart';
 
-import '../../../logic/auth_bloc/auth_bloc.dart';
+import '../../../core/extensions/context_extensions.dart';
+import '../../../core/values/values.dart';
+import '../../../l10n/l10n.dart';
 import '../../../logic/localization_bloc/localization_bloc.dart';
 import '../../../logic/theme_mode_cubit/theme_mode_cubit.dart';
 import '../../widgets/costum_bottom_navbar.dart';
 import '../../widgets/default_app_bar.dart';
-import 'widgets/my_list_tile.dart';
+import '../../widgets/my_button.dart';
+import 'profile_controller.dart';
+import 'widgets/profile_image_container.dart';
 import 'widgets/settings_dropdown.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -25,14 +23,12 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   late ThemeMode _selectedOption;
-
   late String _selectedLocalOption;
 
   @override
   void initState() {
     super.initState();
     _selectedLocalOption = context.read<LocalizationBloc>().state.locale;
-
     _selectedOption = context.read<ThemeModeCubit>().state.themeMode;
   }
 
@@ -42,108 +38,66 @@ class _ProfilePageState extends State<ProfilePage> {
       body: SafeArea(
         child: Column(
           children: [
-            DefaultAppBar(title: "profile"),
-            Container(
-              width: 100.h,
-              height: 100.h,
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  width: 2,
-                  strokeAlign: BorderSide.strokeAlignOutside,
-                ),
-                borderRadius: BorderRadius.circular(50),
-              ),
-              child: Center(
-                child: Text(
-                  "A",
-                  style: TextStyle(
-                    fontSize: 49.sp,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
+            DefaultAppBar(title: context.localization.profile),
+            ProfileImageContainer(),
             SizedBox(height: 10.h),
             Text(
-              "Name",
+              context.localization.name,
               style: TextStyle(fontSize: 23.sp, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20.h),
             Expanded(
               child: Container(
-                padding: EdgeInsets.all(20.0),
+                padding: EdgeInsetsDirectional.only(
+                  top: Values.horizontalPadding,
+                  end: Values.horizontalPadding,
+                  start: Values.horizontalPadding,
+                ),
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.primaryContainer,
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+                  borderRadius: BorderRadiusDirectional.vertical(
+                    top: Radius.circular(30),
+                  ),
                 ),
-                height: double.infinity,
                 width: double.infinity,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                child: ListView(
+                  shrinkWrap: true,
                   children: [
                     Text(
-                      "setting",
+                      context.localization.settings,
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.outline,
                       ),
                     ),
                     SettingsDropdown<String>(
-                      label: 'Language',
+                      label: context.localization.language,
                       value: _selectedLocalOption,
-                      options: ['en', 'ar'],
+                      options: AppLocalizations.supportedLocales
+                          .map((e) => e.languageCode.toString())
+                          .toList(),
                       textBuilder: (langCode) =>
-                          {'en': 'English', 'ar': 'العربية'}[langCode]!,
+                          ProfileController.getLanguageName(context, langCode),
                       iconBuilder: (langCode) => Icons.language,
-                      onChanged: (newLang) {
-                        if (newLang == 'ar') {
-                          context.read<LocalizationBloc>().add(
-                            OnLocalizationArabicEvent(),
-                          );
-                        } else {
-                          context.read<LocalizationBloc>().add(
-                            OnLocalizationEnglishEvent(),
-                          );
-                        }
-                      },
+                      onChanged: (newLang) =>
+                          ProfileController.onLanguageChange(context, newLang),
                     ),
                     SettingsDropdown<String>(
-                      label: 'Theme Mode',
+                      label: context.localization.themeMode,
                       value: _selectedOption.name,
                       options: ['dark', 'light', 'system'],
                       textBuilder: (value) =>
-                          value[0].toUpperCase() + value.substring(1),
-                      iconBuilder: (value) {
-                        switch (value) {
-                          case 'dark':
-                            return Icons.dark_mode;
-                          case 'light':
-                            return Icons.light_mode;
-                          case 'system':
-                            return Icons.brightness_auto;
-                          default:
-                            return Icons.settings;
-                        }
-                      },
-                      onChanged: (newValue) {
-                        context.read<ThemeModeCubit>().setTheme(
-                          ThemeMode.values.byName(newValue!),
-                        );
-                      },
-                    ), //
-                    Spacer(),
-                    FilledButton(
-                      onPressed: () {
-                        context.read<AuthBloc>().add(LogoutRequested());
-                        context.read<NavigationCubit>().setPageIndex(0);
-
-                        Navigator.pushNamedAndRemoveUntil(
-                          context,
-                          AppRoutes.login,
-                          ModalRoute.withName('/'),
-                        );
-                      },
-                      child: Text("logout"),
+                          ProfileController.getThemeModeName(context, value),
+                      iconBuilder: ProfileController.getThemeModeIcon,
+                      onChanged: (newValue) =>
+                          ProfileController.onThemeModeChange(
+                            context,
+                            newValue,
+                          ),
+                    ),
+                    MyButton(
+                      btnType: ButtonType.primary,
+                      text: context.localization.logOut,
+                      onTap: () => ProfileController.onLogout(context),
                     ),
                   ],
                 ),
@@ -152,7 +106,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ],
         ),
       ),
-      bottomNavigationBar: CostumBottomNavbar(3),
+      bottomNavigationBar: CostumBottomNavbar(2),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../core/extensions/context_extensions.dart';
 
 import '../../logic/navigation_cubit/navigation_cubit.dart';
 
@@ -23,13 +24,22 @@ class CostumBottomNavbar extends StatelessWidget {
         }
       },
       destinations: [
-        NavigationDestination(icon: Icon(Icons.home_filled), label: "Home"),
-        NavigationDestination(icon: Icon(Icons.assignment), label: "Tasks"),
+        NavigationDestination(
+          icon: Icon(Icons.home_filled),
+          label: context.localization.home,
+        ),
+        NavigationDestination(
+          icon: Icon(Icons.assignment),
+          label: context.localization.tasks,
+        ),
         // NavigationDestination(
         //   icon: Icon(Icons.calendar_month_rounded),
         //   label: "Booking",
         // ),
-        NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
+        NavigationDestination(
+          icon: Icon(Icons.person),
+          label: context.localization.profile,
+        ),
       ],
     );
   }

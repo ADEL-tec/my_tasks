@@ -32,8 +32,8 @@ class MyButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 60.h,
-        margin: EdgeInsets.only(top: 10.h),
-        padding: EdgeInsets.symmetric(horizontal: 15.w),
+        margin: EdgeInsetsDirectional.only(top: 10.h),
+        padding: EdgeInsetsDirectional.symmetric(horizontal: 15.w),
         decoration: BoxDecoration(
           color: btnType == ButtonType.primary
               ? Theme.of(context).colorScheme.tertiary

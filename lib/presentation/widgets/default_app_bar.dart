@@ -18,13 +18,15 @@ class DefaultAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 15.h, bottom: 25.h),
-      padding: EdgeInsets.symmetric(horizontal: Values.horizontalPadding),
+      margin: EdgeInsetsDirectional.only(top: 15.h, bottom: 25.h),
+      padding: EdgeInsetsDirectional.symmetric(
+        horizontal: Values.horizontalPadding,
+      ),
       child: Row(
         children: [
           allowPop
               ? Padding(
-                  padding: EdgeInsets.only(right: 10.w),
+                  padding: EdgeInsetsDirectional.only(end: 10.w),
                   child: IconButton(
                     onPressed: () {
                       Navigator.pop(context);

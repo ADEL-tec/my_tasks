@@ -16,7 +16,6 @@ class ToDoListWidget extends StatefulWidget {
 class _TodoListWidgetState extends State<ToDoListWidget> {
   @override
   Widget build(BuildContext context) {
-    print(widget.tasks.length);
     return SizedBox(
       height: 200.h,
       width: 300.w,
@@ -34,7 +33,7 @@ class _TodoListWidgetState extends State<ToDoListWidget> {
   _buildCard(TaskEntity task) {
     return Container(
       width: 200.w,
-      padding: EdgeInsets.all(10.w),
+      padding: EdgeInsetsDirectional.all(10.w),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.tertiaryContainer,
         borderRadius: BorderRadius.circular(Values.horizontalPadding),

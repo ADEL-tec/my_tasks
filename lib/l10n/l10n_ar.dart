@@ -12,6 +12,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get language => 'العربية';
 
   @override
+  String get language_en => 'الإنجليزية';
+
+  @override
+  String get language_ar => 'العربية';
+
+  @override
   String get appName => 'مهامي';
 
   @override
@@ -38,7 +44,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get loginNow => 'تسجيل الدخول الآن';
 
   @override
+  String get loginImage => 'صورة تسجيل الدخول';
+
+  @override
+  String get loginFailed => 'فشل تسجيل الدخول';
+
+  @override
   String get registerNow => 'سجل الآن';
+
+  @override
+  String get loginRegister => 'تسجيل الدخول';
+
+  @override
+  String get logOut => 'تسجيل الخروج';
 
   @override
   String get name => 'الاسم';
@@ -85,4 +103,131 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get notMember => 'ليس عضوا ؟';
+
+  @override
+  String get title => 'عنوان';
+
+  @override
+  String get description => 'وصف';
+
+  @override
+  String get saveTask => 'حفظ المهمة';
+
+  @override
+  String get editTask => 'تعديل المهمة';
+
+  @override
+  String get addTask => 'إضافة مهمة';
+
+  @override
+  String get pleaseEnterTitle => 'الرجاء إدخال عنوان';
+
+  @override
+  String get due => 'حق';
+
+  @override
+  String get dueDate => 'تاريخ الاستحقاق';
+
+  @override
+  String get hello => 'مرحبًا';
+
+  @override
+  String get today => 'اليوم';
+
+  @override
+  String get user => 'مستخدم';
+
+  @override
+  String get toDo => 'ما يجب فعله';
+
+  @override
+  String get inProgress => 'قيد التقدم';
+
+  @override
+  String get profile => 'حسابي';
+
+  @override
+  String get settings => 'إعدادات';
+
+  @override
+  String get themeMode => 'وضع السمة';
+
+  @override
+  String get dark => 'مظلم';
+
+  @override
+  String get light => 'فاتح';
+
+  @override
+  String get system => 'نظامي';
+
+  @override
+  String get taskDetails => 'تفاصيل المهمة';
+
+  @override
+  String get status => 'حالة';
+
+  @override
+  String get createdAt => 'تم إنشاؤه في';
+
+  @override
+  String get edit => 'تعديل';
+
+  @override
+  String get details => 'تفاصيل';
+
+  @override
+  String get done => 'منتهي';
+
+  @override
+  String get notDone => 'لم يتم الانتهاء';
+
+  @override
+  String get deleteTask => 'حذف المهمة';
+
+  @override
+  String get sureDeleteTask =>
+      'هل أنت متأكد أنك تريد حذف هذه المهمة؟\n\nالعنوان: ';
+
+  @override
+  String get delete => 'مسح';
+
+  @override
+  String get cancel => 'الغاء';
+
+  @override
+  String get taskList => 'قائمة المهام';
+
+  @override
+  String get all => 'الجميع';
+
+  @override
+  String get noTasksYet => 'لا توجد مهام حتى الآن';
+
+  @override
+  String get noTasksFound => 'لم يتم العثور على أي مهام';
+
+  @override
+  String get error => 'خطأ:';
+
+  @override
+  String get thereIsNoTasks => 'لا يوجد مهام';
+
+  @override
+  String get newTask => 'مهمة جديدة';
+
+  @override
+  String get home => 'الرئيسية';
+
+  @override
+  String get tasks => 'المهام';
+
+  @override
+  String get exit => 'خروج';
+
+  @override
+  String get doYouSureWantLeaveApp => 'هل أنت متأكد أنك تريد مغادرة التطبيق؟';
+
+  @override
+  String get markDone => 'وضع علامة على أنه تم';
 }

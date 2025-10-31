@@ -16,3 +16,9 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 flutter gen-l10n 
+
+
+
+for localization
+[BorderRadiusDirectional] instead of [BorderRadius]
+[EdgeInsetsDirectional] instead of [EdgeInsets]

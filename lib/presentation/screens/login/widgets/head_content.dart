@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/extensions/context_extensions.dart';
 
 class HeadContent extends StatelessWidget {
   const HeadContent({

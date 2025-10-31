@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/extensions/context_extensions.dart';
 
 import '../../../../core/values/values.dart';
 
@@ -11,13 +12,15 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 15.h),
-      padding: EdgeInsets.symmetric(horizontal: Values.horizontalPadding),
+      margin: EdgeInsetsDirectional.only(top: 15.h),
+      padding: EdgeInsetsDirectional.symmetric(
+        horizontal: Values.horizontalPadding,
+      ),
       child: Row(
         children: [
           Expanded(
             child: Text(
-              "Hello, $name",
+              "${context.localization.hello}, $name",
               style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
             ),
           ),

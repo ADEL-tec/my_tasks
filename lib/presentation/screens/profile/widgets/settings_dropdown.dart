@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/values/values.dart';
 
 class SettingsDropdown<T> extends StatelessWidget {
   final String label;
@@ -20,20 +23,23 @@ class SettingsDropdown<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsetsDirectional.symmetric(vertical: 12.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            label,
-            style: Theme.of(
-              context,
-            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 8),
+          // Text(
+          //   label,
+          //   style: Theme.of(
+          //     context,
+          //   ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+          // ),
+          // SizedBox(height: 8.h),
           DropdownButtonFormField<T>(
+            key: ValueKey(Localizations.localeOf(context).languageCode),
             value: value,
+            borderRadius: BorderRadius.circular(Values.buttonRadius),
             items: options
                 .map(
                   (item) => DropdownMenuItem<T>(
@@ -45,10 +51,10 @@ class SettingsDropdown<T> extends StatelessWidget {
                             iconBuilder!(item),
                             color: Theme.of(context).colorScheme.primary,
                           ),
-                        if (iconBuilder != null) const SizedBox(width: 10),
+                        if (iconBuilder != null) SizedBox(width: 10.w),
                         Text(
                           textBuilder(item),
-                          style: const TextStyle(fontSize: 16),
+                          style: TextStyle(fontSize: 16.sp),
                         ),
                       ],
                     ),
@@ -65,16 +71,16 @@ class SettingsDropdown<T> extends StatelessWidget {
               filled: true,
               fillColor: Theme.of(context).colorScheme.surfaceContainerHighest,
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(Values.buttonRadius),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(Values.buttonRadius),
                 borderSide: BorderSide(
                   color: Theme.of(context).colorScheme.outlineVariant,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(Values.buttonRadius),
                 borderSide: BorderSide(
                   color: Theme.of(context).colorScheme.primary,
                   width: 1.5,

@@ -1,8 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
+import '../../../core/extensions/context_extensions.dart';
 import '../../../core/utils/validators.dart';
 import '../../../global.dart';
 import '../../widgets/default_app_bar.dart';
@@ -99,14 +99,16 @@ class _AddEditTaskPageState extends State<AddEditTaskPage> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     DefaultAppBar(
-                      title: isEditing ? 'Edit Task' : 'Add Task',
+                      title: isEditing
+                          ? context.localization.editTask
+                          : context.localization.addTask,
                       allowPop: true,
                     ),
                     Expanded(
                       child: Stack(
                         children: [
                           Padding(
-                            padding: EdgeInsets.symmetric(
+                            padding: EdgeInsetsDirectional.symmetric(
                               horizontal: Values.horizontalPadding,
                             ),
                             child: Form(
@@ -115,26 +117,26 @@ class _AddEditTaskPageState extends State<AddEditTaskPage> {
                                 shrinkWrap: true,
                                 children: [
                                   MyTextField(
-                                    text: "Title",
+                                    text: context.localization.title,
                                     controller: _titleController,
                                     textType: TextInputType.text,
                                     iconName: Icons.title,
-                                    hintText: "Title",
+                                    hintText: context.localization.title,
                                     validator: (value) {
                                       return Validators.validateNotEmpty(
                                         context,
                                         value,
-                                        'Please enter a title',
+                                        context.localization.pleaseEnterTitle,
                                       );
                                     },
                                   ),
                                   MyTextField(
-                                    text: "Description",
+                                    text: context.localization.description,
                                     controller: _descController,
                                     textType: TextInputType.multiline,
                                     maxLines: 4,
                                     iconName: Icons.description,
-                                    hintText: "Description",
+                                    hintText: context.localization.description,
                                   ),
                                   SizedBox(height: 10.h),
                                   _buildDueDateWidget(),
@@ -143,7 +145,7 @@ class _AddEditTaskPageState extends State<AddEditTaskPage> {
                                   const SizedBox(height: 24),
                                   MyButton(
                                     btnType: ButtonType.primary,
-                                    text: 'Save Task',
+                                    text: context.localization.saveTask,
                                     onTap: _onSavePressed,
                                   ),
                                 ],
@@ -185,7 +187,7 @@ class _AddEditTaskPageState extends State<AddEditTaskPage> {
 
   _buildMarkAsDone() {
     return SwitchListTile(
-      title: const Text("Mark as done"),
+      title: Text(context.localization.markDone),
       value: _isDone,
       onChanged: (val) => setState(() => _isDone = val),
       shape: RoundedRectangleBorder(
@@ -198,10 +200,10 @@ class _AddEditTaskPageState extends State<AddEditTaskPage> {
     return ListTile(
       title: Text(
         _dueDate != null
-            ? 'Due: ${DateFormat.yMd().add_jm().format(_dueDate!)}'
+            ? '${context.localization.due}: ${DateFormat.yMd().add_jm().format(_dueDate!)}'
             : _existingTask?.dueDate != null
-            ? 'Due: ${DateFormat.yMd().add_jm().format(_existingTask!.dueDate!)}'
-            : 'Due Date',
+            ? '${context.localization.due}: ${DateFormat.yMd().add_jm().format(_existingTask!.dueDate!)}'
+            : context.localization.dueDate,
       ),
       trailing: const Icon(Icons.calendar_today),
       onTap: () async {

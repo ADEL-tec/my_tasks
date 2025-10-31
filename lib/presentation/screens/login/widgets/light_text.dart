@@ -9,7 +9,7 @@ class LightText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 3.h),
+      margin: EdgeInsetsDirectional.only(bottom: 3.h),
       child: Text(
         text,
         style: TextStyle(

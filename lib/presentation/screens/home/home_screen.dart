@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../core/extensions/context_extensions.dart';
 import 'home_controller.dart';
 import '../../../global.dart';
 import '../../../logic/task_bloc/task_bloc.dart';
@@ -40,14 +41,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   .toList();
               return Column(
                 children: [
-                  HomeAppBar(name: "User"),
+                  HomeAppBar(name: context.localization.user),
                   SizedBox(height: 30.h),
                   TodayTasksCard(todayTasksResult),
                   SizedBox(height: 20.h),
-                  HomeHeader(title: "To Do", count: 3),
+                  HomeHeader(title: context.localization.toDo, count: 3),
+                  SizedBox(height: 10.h),
                   ToDoListWidget(tasksDone),
                   SizedBox(height: 20.h),
-                  HomeHeader(title: "In progress", count: 7),
+                  HomeHeader(title: context.localization.inProgress, count: 7),
                 ],
               );
             }
