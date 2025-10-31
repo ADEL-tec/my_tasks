@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import '../../../../domain/entities/task_entity.dart';
 
 class TaskDetails extends StatelessWidget {
@@ -47,14 +48,20 @@ class TaskDetails extends StatelessWidget {
               leading: Icon(Icons.calendar_today),
               title: Text('Created At'),
               subtitle: Text(
-                task.createdAt != null ? task.createdAt.toString() : '-',
+                task.createdAt != null
+                    ? DateFormat.yMd().add_jm().format(task.createdAt!)
+                    : '-',
               ),
             ),
             if (task.dueDate != null)
               ListTile(
                 leading: Icon(Icons.event),
                 title: Text('Due Date'),
-                subtitle: Text(task.dueDate.toString()),
+                subtitle: Text(
+                  task.dueDate != null
+                      ? DateFormat.yMd().add_jm().format(task.dueDate!)
+                      : '-',
+                ),
               ),
           ],
         ),

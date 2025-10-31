@@ -138,10 +138,11 @@ class _LoginPageState extends State<LoginPage> {
                                       TextSpan(
                                         text: context.localization.registerNow,
                                         recognizer: TapGestureRecognizer()
-                                          ..onTap = () => Navigator.pushNamed(
-                                            context,
-                                            AppRoutes.signup,
-                                          ),
+                                          ..onTap = () =>
+                                              Navigator.pushReplacementNamed(
+                                                context,
+                                                AppRoutes.signup,
+                                              ),
                                         style: TextStyle(
                                           color: Theme.of(
                                             context,

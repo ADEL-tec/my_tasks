@@ -1,6 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class UserEntity {
   int? type;
 
@@ -10,7 +12,7 @@ class UserEntity {
   String? email;
   String? avatar;
   String? openId;
-  String? createdAt;
+  DateTime? createdAt;
 
   UserEntity({
     this.type,
@@ -39,7 +41,9 @@ class UserEntity {
       email: map['email'] != null ? map['email'] as String : null,
       avatar: map['avatar'] != null ? map['avatar'] as String : null,
       openId: map['openId'] != null ? map['openId'] as String : null,
-      createdAt: map['createdAt'] != null ? map['createdAt'] as String : null,
+      createdAt: map['createdAt'] != null
+          ? (map['createdAt'] as Timestamp).toDate()
+          : null,
     );
   }
 

@@ -9,6 +9,7 @@ import 'widgets/home_appbar.dart';
 
 import '../../widgets/costum_bottom_navbar.dart';
 import 'widgets/home_header.dart';
+import 'widgets/not_done_task_list.dart';
 import 'widgets/to_do_list_widget.dart';
 import 'widgets/today_tasks_card.dart';
 
@@ -39,17 +40,26 @@ class _HomeScreenState extends State<HomeScreen> {
               final tasksDone = state.tasks
                   .where((task) => task.isDone)
                   .toList();
-              return Column(
+              final notDoneTasks = state.tasks.where((e) => !e.isDone).toList();
+              return ListView(
                 children: [
                   HomeAppBar(name: context.localization.user),
                   SizedBox(height: 30.h),
                   TodayTasksCard(todayTasksResult),
                   SizedBox(height: 20.h),
-                  HomeHeader(title: context.localization.toDo, count: 3),
+                  HomeHeader(
+                    title: context.localization.toDo,
+                    count: tasksDone.length,
+                  ),
                   SizedBox(height: 10.h),
                   ToDoListWidget(tasksDone),
                   SizedBox(height: 20.h),
-                  HomeHeader(title: context.localization.inProgress, count: 7),
+                  HomeHeader(
+                    title: context.localization.inProgress,
+                    count: notDoneTasks.length,
+                  ),
+                  SizedBox(height: 10.h),
+                  NotDoneTaskList(notDoneTasks),
                 ],
               );
             }
