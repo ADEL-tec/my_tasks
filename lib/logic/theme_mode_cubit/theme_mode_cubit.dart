@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import '../../core/values/constants.dart';
 
+import '../../core/values/constants.dart';
 import '../../global.dart';
 
 part 'theme_mode_state.dart';
@@ -30,11 +30,7 @@ class ThemeModeCubit extends Cubit<ThemeModeState> {
 
   // Change theme mode
   Future<void> setTheme(ThemeMode mode) async {
-    print(Global.storageService.getThemeMode);
-
     emit(ThemeModeState(mode));
-    print("state=> ${state.themeMode}");
-
     Global.storageService.setString(AppConstants.STORAGE_THEME_MODE, mode.name);
   }
 }

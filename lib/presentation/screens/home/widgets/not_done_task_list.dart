@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:my_tasks/domain/entities/task_entity.dart';
+import '../../../../domain/entities/task_entity.dart';
 
 import '../../task_list/widgets/task_item_card.dart';
 

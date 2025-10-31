@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_tasks/domain/entities/task_entity.dart';
+import '../../../domain/entities/task_entity.dart';
 
 import 'widgets/task_details.dart';
 

@@ -15,6 +15,8 @@ class StorageService {
   }
 
   Future<bool> setString(String key, String value) async {
+    print("ahaaah ??? ${key} $value");
+
     return await _prefs.setString(key, value);
   }
 
@@ -41,6 +43,7 @@ class StorageService {
   }
 
   String? get getLocalization {
+    print("whyyyyy!!!! ${_prefs.getString(AppConstants.STORAGE_LOCALIZATION)}");
     return _prefs.getString(AppConstants.STORAGE_LOCALIZATION);
   }
 

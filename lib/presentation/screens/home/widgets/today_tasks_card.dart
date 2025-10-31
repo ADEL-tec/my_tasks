@@ -41,7 +41,9 @@ class _TodayTasksCardState extends State<TodayTasksCard> {
                   ),
                 ),
                 Text(
-                  "${widget.tasksResult.doneToday.length}/${widget.tasksResult.allToday.length} Tasks Done",
+                  Directionality.of(context).name == TextDirection.ltr.name
+                      ? "${widget.tasksResult.doneToday.length}/${widget.tasksResult.allToday.length} ${context.localization.tasksDone}"
+                      : "${context.localization.tasksDone} ${widget.tasksResult.allToday.length}/${widget.tasksResult.doneToday.length}",
                   style: TextStyle(
                     fontSize: 24.sp,
                     fontWeight: FontWeight.bold,

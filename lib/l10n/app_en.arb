@@ -78,5 +78,7 @@
     "tasks": "Tasks",
     "exit": "Exit",
     "doYouSureWantLeaveApp": "Do you sure you want leave the app!",
-    "markDone": "Mark as done"
+    "markDone": "Mark as done",
+    "completed": "Completed",
+    "tasksDone": "Tasks Done"
 }

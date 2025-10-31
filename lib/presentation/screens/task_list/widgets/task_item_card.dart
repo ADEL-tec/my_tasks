@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
-import 'package:my_tasks/presentation/screens/task_list/task_controller.dart';
+import '../task_controller.dart';
 
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/routes/routes.dart';

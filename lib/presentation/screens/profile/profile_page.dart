@@ -22,14 +22,11 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  late ThemeMode _selectedOption;
-  late String _selectedLocalOption;
-
   @override
   void initState() {
     super.initState();
-    _selectedLocalOption = context.read<LocalizationBloc>().state.locale;
-    _selectedOption = context.read<ThemeModeCubit>().state.themeMode;
+    context.read<LocalizationBloc>().state.locale;
+    context.read<ThemeModeCubit>().state.themeMode;
   }
 
   @override
@@ -71,7 +68,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                     SettingsDropdown<String>(
                       label: context.localization.language,
-                      value: _selectedLocalOption,
+                      value: context.watch<LocalizationBloc>().state.locale,
                       options: AppLocalizations.supportedLocales
                           .map((e) => e.languageCode.toString())
                           .toList(),
@@ -83,7 +80,11 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                     SettingsDropdown<String>(
                       label: context.localization.themeMode,
-                      value: _selectedOption.name,
+                      value: context
+                          .watch<ThemeModeCubit>()
+                          .state
+                          .themeMode
+                          .name,
                       options: ['dark', 'light', 'system'],
                       textBuilder: (value) =>
                           ProfileController.getThemeModeName(context, value),

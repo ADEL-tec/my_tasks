@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
-import '../../../../domain/entities/task_entity.dart';
 
 import '../../../../core/values/values.dart';
+import '../../../../domain/entities/task_entity.dart';
 import '../../task_list/task_controller.dart';
 
-class ToDoListWidget extends StatefulWidget {
-  const ToDoListWidget(this.tasks, {super.key});
+class CompleyedListWidget extends StatefulWidget {
+  const CompleyedListWidget(this.tasks, {super.key});
 
   final List<TaskEntity> tasks;
   @override
-  State<ToDoListWidget> createState() => _TodoListWidgetState();
+  State<CompleyedListWidget> createState() => _TodoListWidgetState();
 }
 
-class _TodoListWidgetState extends State<ToDoListWidget> {
+class _TodoListWidgetState extends State<CompleyedListWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(

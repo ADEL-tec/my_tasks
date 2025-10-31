@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../core/extensions/context_extensions.dart';
-import 'home_controller.dart';
 import '../../../global.dart';
 import '../../../logic/task_bloc/task_bloc.dart';
-import 'widgets/home_appbar.dart';
-
 import '../../widgets/costum_bottom_navbar.dart';
+import 'home_controller.dart';
+import 'widgets/home_appbar.dart';
 import 'widgets/home_header.dart';
 import 'widgets/not_done_task_list.dart';
 import 'widgets/to_do_list_widget.dart';
@@ -48,14 +48,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   TodayTasksCard(todayTasksResult),
                   SizedBox(height: 20.h),
                   HomeHeader(
-                    title: context.localization.toDo,
+                    title: context.localization.completed,
                     count: tasksDone.length,
                   ),
                   SizedBox(height: 10.h),
-                  ToDoListWidget(tasksDone),
+                  CompleyedListWidget(tasksDone),
                   SizedBox(height: 20.h),
                   HomeHeader(
-                    title: context.localization.inProgress,
+                    title: context.localization.toDo,
                     count: notDoneTasks.length,
                   ),
                   SizedBox(height: 10.h),

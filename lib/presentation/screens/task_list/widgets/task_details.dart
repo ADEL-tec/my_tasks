@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import '../../../../domain/entities/task_entity.dart';
 
 class TaskDetails extends StatelessWidget {

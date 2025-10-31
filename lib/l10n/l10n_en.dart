@@ -229,4 +229,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get markDone => 'Mark as done';
+
+  @override
+  String get completed => 'Completed';
+
+  @override
+  String get tasksDone => 'Tasks Done';
 }

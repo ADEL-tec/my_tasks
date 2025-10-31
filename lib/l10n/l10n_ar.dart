@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -230,4 +231,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get markDone => 'وضع علامة على أنه تم';
+
+  @override
+  String get completed => 'المنتهي';
+
+  @override
+  String get tasksDone => 'المهام المنجزة';
 }
