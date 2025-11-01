@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/extensions/context_extensions.dart';
+import '../../../core/routes/names.dart';
 import '../../../core/values/values.dart';
 import '../../../l10n/l10n.dart';
 import '../../../logic/localization_bloc/localization_bloc.dart';
@@ -35,7 +36,13 @@ class _ProfilePageState extends State<ProfilePage> {
       body: SafeArea(
         child: Column(
           children: [
-            DefaultAppBar(title: context.localization.profile),
+            DefaultAppBar(
+              title: context.localization.profile,
+              actionIcon: Icons.edit_square,
+              onClickAction: () {
+                Navigator.pushNamed(context, AppRoutes.editProfile);
+              },
+            ),
             ProfileImageContainer(),
             SizedBox(height: 10.h),
             Text(

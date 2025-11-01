@@ -146,6 +146,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profile => 'Profile';
 
   @override
+  String get editProfile => 'Edit Profile';
+
+  @override
   String get settings => 'Settings';
 
   @override
@@ -235,4 +238,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tasksDone => 'Tasks Done';
+
+  @override
+  String get pickFile => 'Pick File';
+
+  @override
+  String get takeImage => 'Take Image';
+
+  @override
+  String get phoneNumber => 'Phone number';
 }

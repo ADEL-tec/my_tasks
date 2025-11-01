@@ -9,11 +9,15 @@ class DefaultAppBar extends StatelessWidget {
     this.color,
     required this.title,
     this.allowPop = false,
+    this.actionIcon,
+    this.onClickAction,
   });
 
   final Color? color;
   final String title;
   final bool allowPop;
+  final IconData? actionIcon;
+  final void Function()? onClickAction;
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +46,10 @@ class DefaultAppBar extends StatelessWidget {
             title,
             style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
           ),
+          Spacer(),
+          actionIcon != null
+              ? IconButton(onPressed: onClickAction, icon: Icon(actionIcon))
+              : SizedBox.shrink(),
         ],
       ),
     );

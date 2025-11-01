@@ -100,7 +100,13 @@ class _TaskListPageState extends State<TaskListPage>
                       onRefresh: () async {
                         _fetchData();
                       },
-                      child: BlocBuilder<TaskBloc, TaskState>(
+                      child: BlocConsumer<TaskBloc, TaskState>(
+                        listener: (context, state) {
+                          if (state is TaskUpdatedState ||
+                              state is TaskDeletededState) {
+                            _fetchData();
+                          }
+                        },
                         builder: (BuildContext context, state) {
                           if (state is TaskLoadingState) {
                             return Center(child: CircularProgressIndicator());
@@ -127,7 +133,6 @@ class _TaskListPageState extends State<TaskListPage>
                                 ),
                                 itemBuilder: (ctx, index) {
                                   final task = filteredTasks[index];
-
                                   return TaskItemCard(task, index: index);
                                 },
                               ),

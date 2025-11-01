@@ -368,6 +368,12 @@ abstract class AppLocalizations {
   /// **'Profile'**
   String get profile;
 
+  /// No description provided for @editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfile;
+
   /// No description provided for @settings.
   ///
   /// In en, this message translates to:
@@ -547,6 +553,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tasks Done'**
   String get tasksDone;
+
+  /// No description provided for @pickFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick File'**
+  String get pickFile;
+
+  /// No description provided for @takeImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Take Image'**
+  String get takeImage;
+
+  /// No description provided for @phoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone number'**
+  String get phoneNumber;
 }
 
 class _AppLocalizationsDelegate

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_tasks/presentation/screens/profile/edit_profile.dart';
 
 import '../../presentation/screens/add_edit_task/add_edit_task_page.dart';
 import '../../presentation/screens/auth_wrapper.dart';
@@ -19,6 +20,7 @@ class AppPages {
     PageEntity(route: AppRoutes.tasks, page: TaskListPage()),
     PageEntity(route: AppRoutes.addTask, page: AddEditTaskPage()),
     PageEntity(route: AppRoutes.editTask, page: AddEditTaskPage()),
+    PageEntity(route: AppRoutes.editProfile, page: EditProfile()),
   ];
 
   static List<dynamic> get allBLocBroviders =>
@@ -70,6 +72,12 @@ class AppPages {
         );
       case AppRoutes.editTask:
         final page = _getPage(AppRoutes.editTask);
+        return MaterialPageRoute(
+          builder: (context) => page,
+          settings: settings,
+        );
+      case AppRoutes.editProfile:
+        final page = _getPage(AppRoutes.editProfile);
         return MaterialPageRoute(
           builder: (context) => page,
           settings: settings,

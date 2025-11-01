@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -28,7 +27,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get welcome => 'مرحبًا!';
 
   @override
-  String get login => 'Login';
+  String get login => 'تسجيل الدخول';
 
   @override
   String get register => 'تسجيل';
@@ -148,6 +147,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get profile => 'حسابي';
 
   @override
+  String get editProfile => 'تعديل الملف الشخصي';
+
+  @override
   String get settings => 'إعدادات';
 
   @override
@@ -237,4 +239,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get tasksDone => 'المهام المنجزة';
+
+  @override
+  String get pickFile => 'اختيار الملف';
+
+  @override
+  String get takeImage => 'التقط صورة';
+
+  @override
+  String get phoneNumber => 'رقم الهاتف';
 }

@@ -33,6 +33,12 @@ class _TaskItemCardState extends State<TaskItemCard>
   }
 
   @override
+  void dispose() {
+    _slidableontroller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final color = widget.task.isDone ? Colors.green[300] : Colors.red[300];
     return Container(

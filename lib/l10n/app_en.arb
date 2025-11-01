@@ -51,6 +51,7 @@
     "toDo": "To Do",
     "inProgress": "In progress",
     "profile": "Profile",
+    "editProfile": "Edit Profile",
     "settings": "Settings",
     "themeMode": "Theme Mode",
     "dark": "Dark",
@@ -80,5 +81,8 @@
     "doYouSureWantLeaveApp": "Do you sure you want leave the app!",
     "markDone": "Mark as done",
     "completed": "Completed",
-    "tasksDone": "Tasks Done"
+    "tasksDone": "Tasks Done",
+    "pickFile": "Pick File",
+    "takeImage": "Take Image",
+    "phoneNumber": "Phone number"
 }

@@ -105,54 +105,50 @@ class _AddEditTaskPageState extends State<AddEditTaskPage> {
                       allowPop: true,
                     ),
                     Expanded(
-                      child: Stack(
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.symmetric(
-                              horizontal: Values.horizontalPadding,
-                            ),
-                            child: Form(
-                              key: _formKey,
-                              child: ListView(
-                                shrinkWrap: true,
-                                children: [
-                                  MyTextField(
-                                    text: context.localization.title,
-                                    controller: _titleController,
-                                    textType: TextInputType.text,
-                                    iconName: Icons.title,
-                                    hintText: context.localization.title,
-                                    validator: (value) {
-                                      return Validators.validateNotEmpty(
-                                        context,
-                                        value,
-                                        context.localization.pleaseEnterTitle,
-                                      );
-                                    },
-                                  ),
-                                  MyTextField(
-                                    text: context.localization.description,
-                                    controller: _descController,
-                                    textType: TextInputType.multiline,
-                                    maxLines: 4,
-                                    iconName: Icons.description,
-                                    hintText: context.localization.description,
-                                  ),
-                                  SizedBox(height: 10.h),
-                                  _buildDueDateWidget(),
-                                  SizedBox(height: 10.h),
-                                  _buildMarkAsDone(),
-                                  const SizedBox(height: 24),
-                                  MyButton(
-                                    btnType: ButtonType.primary,
-                                    text: context.localization.saveTask,
-                                    onTap: _onSavePressed,
-                                  ),
-                                ],
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.symmetric(
+                          horizontal: Values.horizontalPadding,
+                        ),
+                        child: Form(
+                          key: _formKey,
+                          child: ListView(
+                            shrinkWrap: true,
+                            children: [
+                              MyTextField(
+                                text: context.localization.title,
+                                controller: _titleController,
+                                textType: TextInputType.text,
+                                iconName: Icons.title,
+                                hintText: context.localization.title,
+                                validator: (value) {
+                                  return Validators.validateNotEmpty(
+                                    context,
+                                    value,
+                                    context.localization.pleaseEnterTitle,
+                                  );
+                                },
                               ),
-                            ),
+                              MyTextField(
+                                text: context.localization.description,
+                                controller: _descController,
+                                textType: TextInputType.multiline,
+                                maxLines: 4,
+                                iconName: Icons.description,
+                                hintText: context.localization.description,
+                              ),
+                              SizedBox(height: 10.h),
+                              _buildDueDateWidget(),
+                              SizedBox(height: 10.h),
+                              _buildMarkAsDone(),
+                              const SizedBox(height: 24),
+                              MyButton(
+                                btnType: ButtonType.primary,
+                                text: context.localization.saveTask,
+                                onTap: _onSavePressed,
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ],

@@ -1,12 +1,18 @@
 {
     "@@locale": "ar",
     "language": "العربية",
+    "@language": {
+        "description": "اللغة المختارة"
+    },
     "language_en": "الإنجليزية",
     "language_ar": "العربية",
     "appName": "مهامي",
+    "@@appName": {
+        "description": "اسم التطبيق"
+    },
     "welcomeBack": "مرحبًا بعودتك!",
     "welcome": "مرحبًا!",
-    "Login": "تسجيل الدخول",
+    "login": "تسجيل الدخول",
     "register": "تسجيل",
     "loginDescription": "يرجى ملء النماذج أدناه للبدء.\n إذا لم تكن عضوًا بعد، فيرجى تسجيل الدخول الآن أدناه",
     "registerDescription": "يرجى ملء النموذج أدناه لإنشاء حسابك.\n إذا كان لديك حساب بالفعل، يرجى النقر فوق 'تسجيل الدخول' أدناه.",
@@ -45,6 +51,7 @@
     "toDo": "ما يجب فعله",
     "inProgress": "قيد التقدم",
     "profile": "حسابي",
+    "editProfile": "تعديل الملف الشخصي",
     "settings": "إعدادات",
     "themeMode": "وضع السمة",
     "dark": "مظلم",
@@ -74,5 +81,8 @@
     "doYouSureWantLeaveApp": "هل أنت متأكد أنك تريد مغادرة التطبيق؟",
     "markDone": "وضع علامة على أنه تم",
     "completed": "المنتهي",
-    "tasksDone": "المهام المنجزة"
+    "tasksDone": "المهام المنجزة",
+    "pickFile": "اختيار الملف",
+    "takeImage": "التقط صورة",
+    "phoneNumber": "رقم الهاتف"
 }
