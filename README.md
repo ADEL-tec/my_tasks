@@ -1,24 +1,65 @@
-# my_tasks
+# 📱 My Tasks App
 
-A new Flutter project.
+A Flutter application for managing daily tasks efficiently — featuring authentication, file/image attachments, and organized task lists.  
+Built with **Flutter**, **Firebase**, and **BLoC state management**, following clean architecture principles.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
 
-A few resources to get you started if this is your first Flutter project:
+- 🔐 **User Authentication** (Firebase Auth)  
+- 🗂️ **Task Management** – Add, edit, delete, and complete tasks  
+- 📎 **Attach files or images** to tasks using `image_picker` and `file_picker`  
+- ☁️ **Cloud Storage** with Firebase Firestore  
+- 🌙 **Dark & Light Theme Support**  
+- 📱 Responsive UI for Android and iOS  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🧰 Tech Stack
 
-flutter gen-l10n 
+- **Flutter SDK** (>=3.0.0)  
+- **Dart**  
+- **BLoC (flutter_bloc)** – for state management  
+- **Firebase Auth & Firestore**  
+- **image_picker: ^1.2.0**  
+- **file_picker: ^8.1.2**  
 
+---
 
+## 🛠️ Setup Instructions
 
-for localization
-[BorderRadiusDirectional] instead of [BorderRadius]
-[EdgeInsetsDirectional] instead of [EdgeInsets]
+### 1️⃣ Clone the Project
+```bash
+git clone https://github.com/your-username/my_tasks.git
+cd my_tasks
+
+```
+
+### 2️⃣ Install Dependencies
+```bash
+flutter pub get
+```
+
+### 3️⃣ Configure Firebase
+
+1. Go to the [Firebase Console](https://console.firebase.google.com/).
+2. Create a new project.
+3. Add Android and iOS apps to your Firebase project.
+4. Download and place these config files:
+   - `google-services.json` → inside `android/app/`
+   - `GoogleService-Info.plist` → inside `ios/Runner/`
+5. Run the FlutterFire CLI to connect Firebase:
+   ```bash
+   flutterfire configure
+   ```
+
+### 4️⃣ Run the App
+```bash
+flutter run
+```
+
+---
+
+## 📄 License
+This project is open-source and available under the [MIT License](LICENSE).
