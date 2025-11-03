@@ -5,6 +5,17 @@ Built with **Flutter**, **Firebase**, and **BLoC state management**, following c
 
 ---
 
+## Screenshots
+
+![Alt text](assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.42.25.png.png)
+![Alt text](assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.43.32.png.png)
+![Alt text](assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.43.41.png.png)
+![Alt text](assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.45.07.png.png)
+![Alt text](assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.45.19.png.png)
+![Alt text](assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.45.26.png.png)
+![Alt text](assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.45.37.png.png)
+![Alt text](assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.45.38.png.png)
+
 ## 🚀 Features
 
 - 🔐 **User Authentication** (Firebase Auth)  
