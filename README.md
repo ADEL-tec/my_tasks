@@ -7,7 +7,11 @@ Built with **Flutter**, **Firebase**, and **BLoC state management**, following c
 
 ## Screenshots
 
-![Alt text](assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.42.25.png.png)
+<p align="center">
+  <img src="assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.42.25.png" alt="Logo" width="200"/>
+</p>
+
+![Alt text](assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.42.25.png)
 ![Alt text](assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.43.32.png.png)
 ![Alt text](assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.43.41.png.png)
 ![Alt text](assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.45.07.png.png)
