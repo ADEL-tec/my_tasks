@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/extensions/context_extensions.dart';
 import '../../../core/routes/names.dart';
 import '../../../core/values/values.dart';
+import '../../../global.dart';
 import '../../../l10n/l10n.dart';
 import '../../../logic/localization_bloc/localization_bloc.dart';
 import '../../../logic/theme_mode_cubit/theme_mode_cubit.dart';
@@ -23,11 +24,14 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  late String? name;
+
   @override
   void initState() {
     super.initState();
     context.read<LocalizationBloc>().state.locale;
     context.read<ThemeModeCubit>().state.themeMode;
+    name = Global.currentUserData?.name;
   }
 
   @override
@@ -46,7 +50,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ProfileImageContainer(),
             SizedBox(height: 10.h),
             Text(
-              context.localization.name,
+              name ?? context.localization.name,
               style: TextStyle(fontSize: 23.sp, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20.h),

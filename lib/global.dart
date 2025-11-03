@@ -28,15 +28,21 @@ class Global {
   static late AuthService authService;
   static UserEntity? currentUserData;
 
-  static Future<void> loadCurrentUserData() async {
-    final uid = authService.currentUser!.uid; // your FirebaseAuth user
-    final doc = await FirebaseFirestore.instance
-        .collection(AppConstants.FIREBASE_COLLECTION_USERS)
-        .doc(uid)
-        .get();
-    final data = doc.data();
+  static Future<void> loadCurrentUserData({isNew = false}) async {
+    if (isNew) {
+      final uid = authService.currentUser!.uid;
+      final doc = await FirebaseFirestore.instance
+          .collection(AppConstants.FIREBASE_COLLECTION_USERS)
+          .doc(uid)
+          .get();
+      final data = doc.data();
 
-    currentUserData = UserEntity.fromMap(data!);
+      storageService.setMap(AppConstants.STORAGE_USER_DATA, data ?? {});
+
+      currentUserData = UserEntity.fromMap(data!);
+    } else {
+      currentUserData = storageService.getUserData;
+    }
   }
 
   static Future init() async {

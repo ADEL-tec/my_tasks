@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_tasks/global.dart';
 
 import '../../core/extensions/context_extensions.dart';
 
@@ -19,6 +20,8 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
 
+    _loadUserData();
+
     // initialize the animation
     _controller = AnimationController(
       vsync: this,
@@ -29,6 +32,10 @@ class _SplashScreenState extends State<SplashScreen>
       begin: 1.0,
       end: 1.2,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+  }
+
+  Future<void> _loadUserData() async {
+    await Global.loadCurrentUserData();
   }
 
   @override

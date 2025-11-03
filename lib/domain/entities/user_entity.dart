@@ -35,15 +35,21 @@ class UserEntity {
   }
 
   factory UserEntity.fromMap(Map<String, dynamic> map) {
+    var createdAtValue = map['createdAt'];
+    if (createdAtValue != null) {
+      if (createdAtValue is Timestamp) {
+        createdAtValue = createdAtValue.toDate();
+      } else if (createdAtValue is String) {
+        createdAtValue = DateTime.tryParse(createdAtValue);
+      }
+    }
     return UserEntity(
       type: map['type'] != null ? map['type'] as int : null,
       name: map['name'] != null ? map['name'] as String : null,
       email: map['email'] != null ? map['email'] as String : null,
       avatar: map['avatar'] != null ? map['avatar'] as String : null,
       openId: map['openId'] != null ? map['openId'] as String : null,
-      createdAt: map['createdAt'] != null
-          ? (map['createdAt'] as Timestamp).toDate()
-          : null,
+      createdAt: createdAtValue,
     );
   }
 

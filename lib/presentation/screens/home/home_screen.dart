@@ -21,10 +21,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late String? name;
+
   @override
   void initState() {
     super.initState();
     getIt<TaskBloc>().add(LoadTasks(Global.authService.currentUser!.uid));
+    name = Global.currentUserData?.name;
   }
 
   @override
@@ -43,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
               final notDoneTasks = state.tasks.where((e) => !e.isDone).toList();
               return ListView(
                 children: [
-                  HomeAppBar(name: context.localization.user),
+                  HomeAppBar(name: name ?? context.localization.user),
                   SizedBox(height: 30.h),
                   TodayTasksCard(todayTasksResult),
                   SizedBox(height: 20.h),

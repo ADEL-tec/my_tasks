@@ -14,26 +14,7 @@ class LocalizationBloc extends Bloc<LocalizationEvent, LocalizationState> {
     : super(LocalizationState(Global.storageService.getLocalization ?? "en")) {
     on<OnLocalizationEnglishEvent>(onLocalizationEnglishEvent);
     on<OnLocalizationArabicEvent>(onLocalizationArabicEvent);
-
-    // _loadLocalization();
   }
-
-  // void _loadLocalization() {
-  //   if (Global.storageService.getLocalization == null ||
-  //       Global.storageService.getLocalization == 'en') {
-  //     add(OnLocalizationEnglishEvent());
-  //     Global.storageService.setString(
-  //       AppConstants.STORAGE_LANGUAGE_LOCAL,
-  //       'en',
-  //     );
-  //   } else {
-  //     add(OnLocalizationArabicEvent());
-  //     Global.storageService.setString(
-  //       AppConstants.STORAGE_LANGUAGE_LOCAL,
-  //       'en',
-  //     );
-  //   }
-  // }
 
   FutureOr<void> onLocalizationEnglishEvent(
     OnLocalizationEnglishEvent event,

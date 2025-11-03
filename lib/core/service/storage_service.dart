@@ -1,4 +1,8 @@
+import 'dart:convert';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:my_tasks/domain/entities/user_entity.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../values/constants.dart';
@@ -15,13 +19,30 @@ class StorageService {
   }
 
   Future<bool> setString(String key, String value) async {
-    print("ahaaah ??? ${key} $value");
-
     return await _prefs.setString(key, value);
   }
 
   Future<bool> setInt(String key, int value) async {
     return await _prefs.setInt(key, value);
+  }
+
+  Future<bool> setMap(String key, Map<String, dynamic> value) async {
+    final encoded = jsonEncode(_convertTimestamps(value));
+    return await _prefs.setString(key, encoded);
+  }
+
+  Map<String, dynamic> _convertTimestamps(Map<String, dynamic> map) {
+    final result = <String, dynamic>{};
+    map.forEach((key, val) {
+      if (val is Timestamp) {
+        result[key] = val.toDate().toIso8601String();
+      } else if (val is Map) {
+        result[key] = _convertTimestamps(Map<String, dynamic>.from(val));
+      } else {
+        result[key] = val;
+      }
+    });
+    return result;
   }
 
   bool get getDeviceFirstOpen {
@@ -43,7 +64,6 @@ class StorageService {
   }
 
   String? get getLocalization {
-    print("whyyyyy!!!! ${_prefs.getString(AppConstants.STORAGE_LOCALIZATION)}");
     return _prefs.getString(AppConstants.STORAGE_LOCALIZATION);
   }
 
@@ -55,14 +75,14 @@ class StorageService {
     return _prefs.getInt(AppConstants.STORAGE_NAVIGATION_INDEX);
   }
 
-  // UserItem? get getUserProfile {
-  //   final profileOffline =
-  //       _prefs.getString(AppConstants.STORAGE_USER_PROFILE_KEY) ?? "";
-  //   if (profileOffline.isNotEmpty) {
-  //     return UserItem.fromJson(jsonDecode(profileOffline));
-  //   }
-  //   return null;
-  // }
+  UserEntity get getUserData {
+    print(
+      "display___ ${_prefs.getString(AppConstants.STORAGE_USER_DATA) ?? "{}"}",
+    );
+    return UserEntity.fromJson(
+      _prefs.getString(AppConstants.STORAGE_USER_DATA) ?? "{}",
+    );
+  }
 
   String get getUserToken {
     return _prefs.getString(AppConstants.STORAGE_USER_TOKEN_KEY) ?? "";

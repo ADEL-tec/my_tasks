@@ -34,7 +34,6 @@ class _LoginPageState extends State<LoginPage> {
 
   void _onLoginPressed() {
     print("email ${_emailController.text}");
-    print("password ${_passwordController.text}");
     if (_formKey.currentState!.validate()) {
       context.read<AuthBloc>().add(
         LoginRequested(

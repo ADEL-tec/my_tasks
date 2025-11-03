@@ -95,8 +95,6 @@ class _RegisterPageState extends State<RegisterPage> {
                           description: context.localization.registerDescription,
                         ),
                         SizedBox(height: 40.h),
-                        // LightText("Email"),
-                        // SizedBox(height: 5.h),
                         Form(
                           key: _formKey,
                           child: Column(
@@ -127,8 +125,6 @@ class _RegisterPageState extends State<RegisterPage> {
                                   );
                                 },
                               ),
-                              // LightText("Password"),
-                              // SizedBox(height: 5.h),
                               MyTextField(
                                 controller: _passwordController,
                                 text: context.localization.password,

@@ -50,7 +50,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         AppConstants.STORAGE_USER_UID,
         userCredential.user!.uid,
       );
-      await Global.loadCurrentUserData();
+      await Global.loadCurrentUserData(isNew: true);
 
       emit(Authenticated(userCredential.user!));
     } on FirebaseAuthException catch (e) {
@@ -75,7 +75,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         userCredential.user!.uid,
       );
 
-      await Global.loadCurrentUserData();
+      await Global.loadCurrentUserData(isNew: true);
 
       emit(Authenticated(userCredential.user!));
     } on FirebaseAuthException catch (e) {
