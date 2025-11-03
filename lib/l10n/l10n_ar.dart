@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -74,7 +75,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get password => 'كلمة المرور';
 
   @override
-  String get enterPassword => 'أدخل عنوان بريدك الإلكتروني';
+  String get enterPassword => 'أدخل كلمة المرور';
 
   @override
   String get validatorsInvalidEmail => 'يرجى إدخال عنوان بريد إلكتروني صالح!';

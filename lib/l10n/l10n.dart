@@ -179,7 +179,7 @@ abstract class AppLocalizations {
   /// No description provided for @registerNow.
   ///
   /// In en, this message translates to:
-  /// **'Login Now'**
+  /// **'Register Now'**
   String get registerNow;
 
   /// No description provided for @loginRegister.
@@ -227,7 +227,7 @@ abstract class AppLocalizations {
   /// No description provided for @enterPassword.
   ///
   /// In en, this message translates to:
-  /// **'Enter your email address'**
+  /// **'Enter your Password'**
   String get enterPassword;
 
   /// No description provided for @validatorsInvalidEmail.

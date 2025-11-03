@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_tasks/core/extensions/context_extensions.dart';
-import 'package:my_tasks/presentation/screens/profile/widgets/edit_image.dart';
+import '../../../core/extensions/context_extensions.dart';
+import 'widgets/edit_image.dart';
 
 import '../../../core/routes/names.dart';
 import '../../../core/utils/validators.dart';

@@ -1,9 +1,7 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
-import '../task_controller.dart';
 
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/routes/routes.dart';
@@ -11,6 +9,7 @@ import '../../../../core/values/values.dart';
 import '../../../../domain/entities/task_entity.dart';
 import '../../../../global.dart';
 import '../../../../logic/task_bloc/task_bloc.dart';
+import '../task_controller.dart';
 
 class TaskItemCard extends StatefulWidget {
   const TaskItemCard(this.task, {super.key, required this.index});

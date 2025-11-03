@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -50,7 +51,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loginFailed => 'Login failed';
 
   @override
-  String get registerNow => 'Login Now';
+  String get registerNow => 'Register Now';
 
   @override
   String get loginRegister => 'Login Register';
@@ -74,7 +75,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get password => 'Password';
 
   @override
-  String get enterPassword => 'Enter your email address';
+  String get enterPassword => 'Enter your Password';
 
   @override
   String get validatorsInvalidEmail => 'Please enter a valid email address!';

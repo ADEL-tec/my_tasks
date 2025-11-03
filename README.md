@@ -21,9 +21,11 @@ Built with **Flutter**, **Firebase**, and **BLoC state management**, following c
 - **Flutter SDK** (>=3.0.0)  
 - **Dart**  
 - **BLoC (flutter_bloc)** – for state management  
+- **get_it**
 - **Firebase Auth & Firestore**  
-- **image_picker: ^1.2.0**  
-- **file_picker: ^8.1.2**  
+- **flutter_slidable**
+- **image_picker**  
+- **file_picker**  
 
 ---
 

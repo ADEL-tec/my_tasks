@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'logic/calendar_cubit/calendar_cubit.dart';
 
 import 'core/data/repositories/task_repo_impl.dart';
 import 'core/routes/bloc_observer.dart';
@@ -70,6 +71,7 @@ class Global {
     getIt.registerFactory<LocalizationBloc>(() => LocalizationBloc());
     getIt.registerFactory<NavigationCubit>(() => NavigationCubit());
     getIt.registerFactory<ThemeModeCubit>(() => ThemeModeCubit());
+    getIt.registerFactory<CalendarCubit>(() => CalendarCubit());
     getIt.registerFactory<AuthBloc>(
       () => AuthBloc(authService: getIt<AuthService>()),
     );

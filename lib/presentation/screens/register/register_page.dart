@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../core/extensions/context_extensions.dart';
-import '../../../domain/entities/user_entity.dart';
 
+import '../../../core/extensions/context_extensions.dart';
 import '../../../core/routes/names.dart';
 import '../../../core/utils/validators.dart';
 import '../../../core/values/values.dart';
+import '../../../domain/entities/user_entity.dart';
 import '../../../logic/auth_bloc/auth_bloc.dart';
 import '../../widgets/my_button.dart';
 import '../../widgets/my_text_field.dart';

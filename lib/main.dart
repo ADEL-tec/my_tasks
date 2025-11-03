@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'logic/calendar_cubit/calendar_cubit.dart';
 import 'core/extensions/context_extensions.dart';
 import 'l10n/l10n.dart';
 import 'logic/localization_bloc/localization_bloc.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => getIt<AuthBloc>()),
         BlocProvider(create: (_) => getIt<ThemeModeCubit>()),
         BlocProvider(create: (_) => getIt<NavigationCubit>()),
+        BlocProvider(create: (_) => getIt<CalendarCubit>()),
         BlocProvider(create: (context) => getIt<TaskBloc>()),
       ],
       child: BlocBuilder<LocalizationBloc, LocalizationState>(

@@ -15,7 +15,6 @@ class NavigationCubit extends Cubit<NavigationState> {
 
   // Load saved index mode from SharedPreferences
   Future<void> _loadIndex() async {
-    print("nav index=> ${Global.storageService.getSelectedPageIndex}");
     if (Global.storageService.getSelectedPageIndex == null) {
       emit(NavigationState(0));
       Global.storageService.setInt(AppConstants.STORAGE_NAVIGATION_INDEX, 0);

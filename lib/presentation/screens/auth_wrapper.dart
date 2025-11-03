@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../core/routes/routes.dart';
-import '../../logic/navigation_cubit/navigation_cubit.dart';
 
+import '../../core/routes/routes.dart';
 import '../../logic/auth_bloc/auth_bloc.dart';
+import '../../logic/navigation_cubit/navigation_cubit.dart';
 import 'splash_screen.dart';
 
 class AuthWrapper extends StatelessWidget {

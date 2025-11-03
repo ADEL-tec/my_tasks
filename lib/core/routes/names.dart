@@ -10,4 +10,5 @@ class AppRoutes {
   static const String tasks = "/tasks";
   static const String addTask = "/add_task";
   static const String editTask = "/edit_task";
+  static const String calendar = "/calendar";
 }

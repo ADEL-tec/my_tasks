@@ -4,8 +4,8 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:my_tasks/core/extensions/context_extensions.dart';
-import 'package:my_tasks/presentation/widgets/my_button.dart';
+import '../../../../core/extensions/context_extensions.dart';
+import '../../../widgets/my_button.dart';
 
 import '../../../../core/values/values.dart';
 

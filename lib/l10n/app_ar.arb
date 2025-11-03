@@ -27,7 +27,7 @@
     "email": "البريد إلكتروني",
     "enterEmail": "أدخل عنوان بريدك الإلكتروني",
     "password": "كلمة المرور",
-    "enterPassword": "أدخل عنوان بريدك الإلكتروني",
+    "enterPassword": "أدخل كلمة المرور",
     "validatorsInvalidEmail": "يرجى إدخال عنوان بريد إلكتروني صالح!",
     "validatorsEmailRequired": "البريد الإلكتروني مطلوب",
     "validatorsPasswordRequired": "كلمة المرور مطلوبة",

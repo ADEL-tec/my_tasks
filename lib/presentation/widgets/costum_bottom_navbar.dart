@@ -32,10 +32,10 @@ class CostumBottomNavbar extends StatelessWidget {
           icon: Icon(Icons.assignment),
           label: context.localization.tasks,
         ),
-        // NavigationDestination(
-        //   icon: Icon(Icons.calendar_month_rounded),
-        //   label: "Booking",
-        // ),
+        NavigationDestination(
+          icon: Icon(Icons.calendar_month_rounded),
+          label: "Booking",
+        ),
         NavigationDestination(
           icon: Icon(Icons.person),
           label: context.localization.profile,
