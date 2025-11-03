@@ -7,31 +7,30 @@ Built with **Flutter**, **Firebase**, and **BLoC state management**, following c
 
 ## Screenshots
 
-<p align="center">
   <img src="assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.42.25.png" alt="Logo" width="200"/>
-</p>
-<p align="center">
+
+
   <img src="assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.43.32.png" alt="Logo" width="200"/>
-</p>
-<p align="center">
+
+
   <img src="assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.43.41.png" alt="Logo" width="200"/>
-</p>
-<p align="center">
+
+
   <img src="assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.45.07.png" alt="Logo" width="200"/>
-</p>
-<p align="center">
+
+
   <img src="assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.45.19.png" alt="Logo" width="200"/>
-</p>
-<p align="center">
+
+
   <img src="assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.45.26.png" alt="Logo" width="200"/>
-</p>
-<p align="center">
+
+
   <img src="assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.45.37.png" alt="Logo" width="200"/>
-</p>
-</p>
-<p align="center">
+
+
+
   <img src="assets/screenshots/Simulator Screenshot - iPhone 16 - 2025-11-01 at 04.45.38.png" alt="Logo" width="200"/>
-</p>
+
 
 
 ## 🚀 Features
